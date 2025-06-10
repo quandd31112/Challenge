@@ -24,8 +24,6 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/toolbar"
         android:layout_marginTop="80dp"/>
-
-    <!-- Final score -->
     <TextView
         android:id="@+id/tvFinalScore"
         android:layout_width="wrap_content"
@@ -47,8 +45,6 @@
         android:text="@string/play_again"
         android:textColor="#FFFFFF"
         android:textSize="17sp" />
-
-    <!-- Nút Exit -->
     <Button
         android:id="@+id/btnExit"
         android:layout_width="200dp"

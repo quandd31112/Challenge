@@ -41,7 +41,6 @@
         android:text="@string/multiplication"
         android:textSize="20sp"
         android:textColor="#FFFFFF"
-
         android:layout_centerHorizontal="true"
         android:layout_below="@id/btnSubtraction"
         android:layout_marginTop="30dp"/>
