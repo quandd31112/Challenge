@@ -5,8 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-
-    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -15,8 +13,6 @@
         android:elevation="4dp"
         app:title="My App"
         app:titleTextColor="#FFFFFF" />
-
-    <!-- Thông tin Score, Life, Timer -->
     <TextView
         android:id="@+id/tvScoreLifeTime"
         android:layout_width="wrap_content"
@@ -27,8 +23,6 @@
         android:layout_below="@id/toolbar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"/>
-
-    <!-- Câu hỏi -->
     <TextView
         android:id="@+id/tvQuestion"
         android:layout_width="wrap_content"

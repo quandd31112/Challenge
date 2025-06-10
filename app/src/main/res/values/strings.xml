@@ -5,4 +5,11 @@
     <string name="please_write_your_answer">Please write your answer</string>
     <string name="textview">TextView</string>
     <string name="score_0_life_3_timer_60">Score: 0 Life: 3 Timer: 60</string>
+    <string name="congratulation">Congratulation!</string>
+    <string name="score_0">Score: 0</string>
+    <string name="play_again">Play Again</string>
+    <string name="exit">Exit</string>
+    <string name="multiplication">Multiplication</string>
+    <string name="subtraction">Subtraction</string>
+    <string name="addition">Addition</string>
 </resources>
