@@ -1,9 +1,9 @@
 package com.example.challenge3;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.Handler;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,10 +15,11 @@ import androidx.appcompat.widget.Toolbar;
 public class AdditionActivity extends AppCompatActivity {
     private TextView tvScoreLifeTime, tvQuestion;
     private EditText edtAnswer;
-    private Button btnOk;
+    private Button btnOk, btnNext;
     private int score = 0, life = 3, timeLeft = 60;
     private int correctAns;
     private CountDownTimer timer;
+    private boolean answered = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +33,18 @@ public class AdditionActivity extends AppCompatActivity {
         tvQuestion = findViewById(R.id.tvQuestion);
         edtAnswer = findViewById(R.id.edtAnswer);
         btnOk = findViewById(R.id.btnOk);
+        btnNext = findViewById(R.id.btnNext);
 
         startGame();
 
         btnOk.setOnClickListener(v -> checkAnswer());
-        edtAnswer.setOnEditorActionListener((v, actionId, event) -> {
-            checkAnswer();
-            return true;
+        btnNext.setOnClickListener(v -> {
+            if (answered) {
+                newQuestion();
+                answered = false;
+            } else {
+                Toast.makeText(this, "You must answer before moving on to the next question!", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 
@@ -69,6 +75,10 @@ public class AdditionActivity extends AppCompatActivity {
     }
 
     private void checkAnswer() {
+        if (answered) {
+            Toast.makeText(this, "You must answer before moving on to the next question!", Toast.LENGTH_SHORT).show();
+            return;
+        }
         String ansStr = edtAnswer.getText().toString().trim();
         if (ansStr.isEmpty()) return;
         int ans = Integer.parseInt(ansStr);
@@ -76,16 +86,16 @@ public class AdditionActivity extends AppCompatActivity {
         if (ans == correctAns) {
             score += 10;
             Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
-            updateInfo();
-            new Handler().postDelayed(this::newQuestion, 500);
         } else {
             life--;
             Toast.makeText(this, "Wrong! Correct: " + correctAns, Toast.LENGTH_SHORT).show();
-            updateInfo();
             if (life == 0) {
                 endGame();
+                return;
             }
         }
+        updateInfo();
+        answered = true;
     }
 
     @SuppressLint("SetTextI18n")

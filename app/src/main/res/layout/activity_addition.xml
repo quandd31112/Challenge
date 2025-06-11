@@ -4,60 +4,83 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:background="@drawable/bg">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="#00BCD4"
+        android:layout_height="90dp"
+        android:background="#249ae9"
         android:elevation="4dp"
         app:title="My App"
         app:titleTextColor="#FFFFFF" />
+
     <TextView
         android:id="@+id/tvScoreLifeTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/score_0_life_3_timer_60"
-        android:textSize="16sp"
-        android:textColor="#E67022"
         android:layout_below="@id/toolbar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"/>
+        android:layout_marginTop="15dp"
+        android:text="@string/score_0_life_3_timer_60"
+        android:textColor="#E91E63"
+        android:textSize="16sp" />
+
     <TextView
         android:id="@+id/tvQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textview"
-        android:textSize="28sp"
-        android:textColor="#E67022"
         android:layout_below="@id/tvScoreLifeTime"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"/>
+        android:layout_marginTop="50dp"
+        android:text="@string/textview"
+        android:textColor="#E67022"
+        android:textSize="28sp" />
+
     <EditText
         android:id="@+id/edtAnswer"
-        android:layout_width="220dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:hint="@string/please_write_your_answer"
-        android:inputType="number"
-        android:gravity="center"
-        android:textSize="17sp"
         android:layout_below="@id/tvQuestion"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:background="@android:color/transparent"
+        android:gravity="center"
+        android:hint="@string/please_write_your_answer"
+        android:imeOptions="actionDone"
+        android:inputType="number"
         android:textColor="#000"
         android:textColorHint="#888"
-        android:imeOptions="actionDone"/>
-    <Button
-        android:id="@+id/btnOk"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:textSize="20sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_below="@id/edtAnswer"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:background="#00BCD4"
-        android:backgroundTint="#00BCD4"
-        android:text="@string/ok"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp" />
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:text="@string/ok"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:text="@string/next_question"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp" />
+    </LinearLayout>
 </RelativeLayout>

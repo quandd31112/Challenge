@@ -88,7 +88,6 @@ public class SubtractionActivity extends AppCompatActivity {
             }
         }
     }
-
     @SuppressLint("SetTextI18n")
     private void updateInfo() {
         tvScoreLifeTime.setText("Score: " + score + "   Life: " + life + "   Timer: " + timeLeft);
